@@ -5,39 +5,28 @@ const Projects = () => {
         const projects = [
             { name: 'Project Alpha', description: 'A revolutionary AI-powered analytics platform', tech: ['Python', 'TensorFlow', 'React'] },
             { name: 'Project Beta', description: 'Blockchain-based supply chain management system', tech: ['Solidity', 'Ethereum', 'Node.js'] },
-            { name: 'Project Gamma', description: 'Real-time collaborative coding environment', tech: ['JavaScript', 'WebRTC', 'Docker'] },
+            { name: 'Project Gamma', description: 'Real-time collaborative coding environment', tech: ['WebSockets', 'Express', 'MongoDB'] }
         ];
-
-        const projectsContainer = document.getElementById('projects-container');
-
+        
+        const projectShowcase = document.getElementById('project-showcase');
         projects.forEach(project => {
-            const projectElement = document.createElement('div');
-            projectElement.className = 'project';
-
-            const projectTitle = document.createElement('h3');
-            projectTitle.textContent = project.name;
-            projectElement.appendChild(projectTitle);
-
-            const projectDescription = document.createElement('p');
-            projectDescription.textContent = project.description;
-            projectElement.appendChild(projectDescription);
-
-            const techList = document.createElement('ul');
-            project.tech.forEach(tech => {
-                const techItem = document.createElement('li');
-                techItem.textContent = tech;
-                techList.appendChild(techItem);
-            });
-            projectElement.appendChild(techList);
-
-            projectsContainer.appendChild(projectElement);
-        });
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.innerHTML = `
+                <h3>${project.name}</h3>
+                <p>${project.description}</p>
+                <div class="tech-stack">
+                    ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+            `;
+            projectShowcase.appendChild(card);
+        });        
     }, []);
 
     return (
         <section id="projects">
-            <h2 className="section-title">Ingenious Creations</h2>
-            <div id="projects-container"></div>
+            <h2 class="section-title">Magnum Opuses</h2>
+            <div id="project-showcase"></div>
         </section>
     );
 };
