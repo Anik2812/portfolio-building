@@ -1,30 +1,35 @@
-import React, { useEffect } from 'react';
-import Particles from 'particlesjs';
+import React, { useCallback } from 'react';
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 
-const ParticleComponent = () => {
-    useEffect(() => {
-        Particles('particle-container', {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#64FFDA" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: false },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#64FFDA", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
-    },
-    interactivity: {
-        detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
-        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
-    },
-    retina_detect: true
-});
-    }, []);
+const ParticleBackground = () => {
+  const particlesInit = useCallback(async engine => {
+    await loadFull(engine);
+  }, []);
 
-    return (
-        <div id="particle-container"></div>
-    );
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      options={{
+        particles: {
+          number: { value: 80, density: { enable: true, value_area: 800 } },
+          color: { value: "#64FFDA" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: false },
+          size: { value: 3, random: true },
+          links: { enable: true, distance: 150, color: "#64FFDA", opacity: 0.4, width: 1 },
+          move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false }
+        },
+        interactivity: {
+          detectsOn: "canvas",
+          events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" }, resize: true },
+          modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+        },
+        retina_detect: true
+      }}
+    />
+  );
 };
 
-export default ParticleComponent;
+export default ParticleBackground;
