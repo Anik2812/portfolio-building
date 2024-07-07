@@ -1,0 +1,33 @@
+/* Contact.css */
+#contact {
+    background-color: #1a1a1a;
+    padding: 60px 20px;
+  }
+  
+  #contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background: #222;
+    color: #fff;
+  }
+  
+  .btn-send {
+    background-color: #64FFDA;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

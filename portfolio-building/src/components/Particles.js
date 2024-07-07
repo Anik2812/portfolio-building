@@ -4,7 +4,13 @@ import { loadFull } from "tsparticles";
 
 const ParticleBackground = () => {
   const particlesInit = useCallback(async engine => {
-    await loadFull(engine);
+    try {
+      console.log("Initializing particles.js engine:", engine);
+      await loadFull(engine);
+      console.log("Particles.js engine loaded successfully");
+    } catch (error) {
+      console.error("Error initializing particles.js engine:", error);
+    }
   }, []);
 
   return (

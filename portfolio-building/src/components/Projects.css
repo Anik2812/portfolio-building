@@ -1,0 +1,21 @@
+
+#projects {
+    background-color: #0e0e0e;
+    padding: 60px 20px;
+  }
+  
+  .project-card {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .tech-tag {
+    background-color: #64FFDA;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  

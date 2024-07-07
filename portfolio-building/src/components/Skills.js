@@ -16,6 +16,7 @@ const Skills = () => {
             { name: 'Docker', size: 1.6 }
         ];
         
+        
         const galaxyScene = new THREE.Scene();
         const galaxyCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const galaxyRenderer = new THREE.WebGLRenderer({ alpha: true });
