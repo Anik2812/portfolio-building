@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <SpaceWarpBackground />
+      
       <Navbar />
       <main>
         <Hero />
@@ -30,6 +30,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <SpaceWarpBackground />
     </div>
   );
 }
